@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f0f0f;
+  --muted: #626262;
+  --border: #d9d9d9;
+  --surface: #f5f5f5;
+  --inverse: #0f0f0f;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section-spacing {
+  @apply px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-24 lg:px-16 lg:py-28;
+}
+
+.section-dark {
+  @apply bg-black text-white;
+}
+
+.fade-up {
+  @apply opacity-0 translate-y-4;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
