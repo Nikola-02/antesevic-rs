@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { DashboardClient } from "@/components/admin/dashboard-client";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { isAllowedAdminEmail } from "@/lib/admin-auth";
 import type { Gallery, Review, Video } from "@/types/database";
 
 export default async function DashboardPage() {
@@ -12,7 +13,7 @@ export default async function DashboardPage() {
   const {
     data: { session },
   } = await supabase.auth.getSession();
-  if (!session) {
+  if (!session || !isAllowedAdminEmail(session.user?.email)) {
     redirect("/admin-login");
   }
 

@@ -9,7 +9,7 @@ export function ReviewCard({ review }: { review: Review }) {
   const needsExpand = review.description.length > 240;
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden bg-white px-6 pb-6 pt-7 sm:px-7 sm:pb-7">
+    <article className="group relative flex h-full flex-col overflow-hidden bg-white px-6 pb-6 pt-7 shadow-[0_8px_24px_rgba(0,0,0,0.08)] transition-shadow duration-300 hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)] sm:px-7 sm:pb-7">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(0,0,0,0.05),_transparent_56%)] opacity-70 transition duration-500 group-hover:opacity-100" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent via-black/35 to-transparent" />
 

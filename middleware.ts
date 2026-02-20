@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
+import { isAllowedAdminEmail } from "@/lib/admin-auth";
 
 const PROTECTED_PREFIXES = ["/dashboard", "/api/admin"];
 
@@ -48,7 +49,12 @@ export async function middleware(request: NextRequest) {
     data: { session },
   } = await supabase.auth.getSession();
 
-  if (!session) {
+  const isApiAdminRoute = request.nextUrl.pathname.startsWith("/api/admin");
+
+  if (!session || !isAllowedAdminEmail(session.user?.email)) {
+    if (isApiAdminRoute) {
+      return NextResponse.json({ error: "Nedozvoljen pristup." }, { status: 403 });
+    }
     return NextResponse.redirect(new URL("/admin-login", request.url));
   }
 

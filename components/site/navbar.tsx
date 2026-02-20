@@ -19,7 +19,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-white/90 backdrop-blur">
       <div className="mx-auto flex w-full max-w-8xl items-center justify-between gap-3 px-4 py-4 sm:px-6 md:px-10">
-        <Link href="/" className="font-serif text-lg tracking-wide">
+        <Link href="/" className="font-serif text-xl tracking-wide sm:text-2xl">
           Antesevic
         </Link>
 
