@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { FadeIn } from "@/components/site/fade-in";
 
 const rowOne = [
   "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=80",
@@ -42,16 +43,25 @@ export function QualityMovingRows() {
   return (
     <section className="bg-[#1e1e1f] py-14 text-white md:py-20">
       <div className="mx-auto mb-10 grid w-full max-w-8xl gap-6 px-4 sm:px-6 md:grid-cols-[1.2fr_0.8fr] md:px-10">
-        <h3 className="font-serif text-[clamp(2rem,5vw,4.6rem)] leading-[0.92] text-white/90">
-          Kvalitet se vidi
-          <br />
-          ne samo kroz vreme
-          <br />
-          vec i kroz detalje.
-        </h3>
-        <p className="max-w-sm justify-self-start self-end text-sm uppercase tracking-[0.08em] text-white/70 md:justify-self-end">
-          Svaki kadar nosi meru, emociju i jasan vizuelni identitet.
-        </p>
+        <FadeIn direction="left" distance={46} blur={12} duration={0.85}>
+          <h3 className="font-serif text-[clamp(2rem,5vw,4.6rem)] leading-[0.92] text-white/90">
+            Kvalitet se vidi
+            <br />
+            ne samo kroz vreme
+            <br />
+            vec i kroz detalje.
+          </h3>
+        </FadeIn>
+        <FadeIn
+          direction="right"
+          delay={0.14}
+          distance={34}
+          blur={10}
+          duration={0.78}
+          className="max-w-sm justify-self-start self-end text-sm uppercase tracking-[0.08em] text-white/70 md:justify-self-end"
+        >
+          <p>Svaki kadar nosi meru, emociju i jasan vizuelni identitet.</p>
+        </FadeIn>
       </div>
 
       <div className="space-y-3">

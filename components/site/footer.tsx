@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
+import { FadeIn } from "@/components/site/fade-in";
 
 function WhatsappIcon({ size = 16 }: { size?: number }) {
   return (
@@ -13,7 +14,7 @@ export function Footer() {
   return (
     <footer className="bg-[#e8e8e6] px-4 py-10 sm:px-6 sm:py-12 md:px-10 md:py-14">
       <div className="mx-auto grid w-full max-w-8xl gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-8">
-        <div>
+        <FadeIn direction="left" distance={34} blur={10}>
           <p className="text-xs uppercase tracking-[0.18em] text-black/70">Email adresa:</p>
           <a href="mailto:antesevicweddings@gmail.com" className="mt-2 inline-block break-all font-serif text-[clamp(1.2rem,5vw,3rem)] leading-[1.06] text-black/85 sm:break-normal">
             antesevicweddings@gmail.com
@@ -22,9 +23,9 @@ export function Footer() {
             Odgovor na upit najcesce stize za manje od 3 sata.
           </p>
           <p className="mt-10 font-serif text-xl italic text-black/70">Srbija, Evropa i svet</p>
-        </div>
+        </FadeIn>
 
-        <div className="w-full md:ml-auto md:w-fit md:justify-self-end">
+        <FadeIn direction="right" delay={0.08} distance={34} blur={10} className="w-full md:ml-auto md:w-fit md:justify-self-end">
           <div className="grid justify-items-end gap-4 text-right text-xs uppercase tracking-[0.14em] text-black/80">
             <Link href="/">Pocetna</Link>
             <Link href="/portfolio">Portfolio</Link>
@@ -32,10 +33,10 @@ export function Footer() {
             <Link href="/reviews">Recenzije</Link>
             <Link href="/about">O meni</Link>
           </div>
-        </div>
+        </FadeIn>
       </div>
 
-      <div className="mx-auto mt-10 flex w-full max-w-8xl items-center justify-between border-t border-black/10 pt-6">
+      <FadeIn direction="up" delay={0.14} distance={24} blur={8} className="mx-auto mt-10 flex w-full max-w-8xl items-center justify-between border-t border-black/10 pt-6">
         <p className="text-sm uppercase tracking-[0.35em] text-black/80">Antesevic</p>
         <div className="flex items-center gap-2">
           <a
@@ -66,7 +67,7 @@ export function Footer() {
             <Facebook size={16} />
           </a>
         </div>
-      </div>
+      </FadeIn>
     </footer>
   );
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { FadeIn } from "@/components/site/fade-in";
 
 const images = [
   "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
@@ -37,17 +38,25 @@ export function PortfolioScrollShowcase() {
 
             <div className="grid h-[74vh] grid-cols-3 gap-3">
               <div className="self-start pt-4 pr-4 xl:pr-6">
-                <p className="text-[11px] uppercase tracking-[0.24em] text-black/60">Editorial izbor</p>
-                <h3 className="mt-4 font-serif text-[clamp(1.8rem,2.4vw,2.7rem)] leading-[0.95] text-black/85">
-                  Pogledaj kolekcije
-                  <br />i celu pricu.
-                </h3>
-                <p className="mt-5 max-w-[280px] text-[12px] uppercase tracking-[0.07em] leading-relaxed text-black/60 xl:max-w-[300px] xl:text-[13px]">
-                  Dok skrolujes, smenjuju se kadrovi. Klikom ulazis u kompletan portfolio.
-                </p>
-                <Link href="/portfolio" className="mt-7 inline-block">
-                  <Button variant="ghost">Otvori portfolio</Button>
-                </Link>
+                <FadeIn direction="left" distance={20} blur={6} duration={0.55}>
+                  <p className="text-[11px] uppercase tracking-[0.24em] text-black/60">Editorial izbor</p>
+                </FadeIn>
+                <FadeIn direction="right" delay={0.08} distance={24} blur={8} duration={0.62}>
+                  <h3 className="mt-4 font-serif text-[clamp(1.8rem,2.4vw,2.7rem)] leading-[0.95] text-black/85">
+                    Pogledaj kolekcije
+                    <br />i celu pricu.
+                  </h3>
+                </FadeIn>
+                <FadeIn direction="left" delay={0.14} distance={20} blur={6} duration={0.6}>
+                  <p className="mt-5 max-w-[280px] text-[12px] uppercase tracking-[0.07em] leading-relaxed text-black/60 xl:max-w-[300px] xl:text-[13px]">
+                    Dok skrolujes, smenjuju se kadrovi. Klikom ulazis u kompletan portfolio.
+                  </p>
+                </FadeIn>
+                <FadeIn direction="up" delay={0.2} distance={16} blur={5} duration={0.55}>
+                  <Link href="/portfolio" className="mt-7 inline-block">
+                    <Button variant="ghost">Otvori portfolio</Button>
+                  </Link>
+                </FadeIn>
               </div>
               <div className="relative overflow-hidden">
                 <Image src={images[0]} alt="Portfolio kadar 1" fill className="object-cover" />
