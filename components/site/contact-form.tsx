@@ -44,7 +44,7 @@ export function ContactForm() {
         rows={5}
         {...form.register("message")}
       />
-      <Button type="submit" className="w-fit">
+      <Button type="submit" className="w-full sm:w-fit">
         Posalji poruku
       </Button>
       {status ? <p className="text-sm text-muted">{status}</p> : null}

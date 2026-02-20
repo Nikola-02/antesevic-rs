@@ -12,10 +12,10 @@ function WhatsappIcon({ size = 16 }: { size?: number }) {
 export function Footer() {
   return (
     <footer className="bg-[#e8e8e6] px-4 py-10 sm:px-6 sm:py-12 md:px-10 md:py-14">
-      <div className="mx-auto grid w-full max-w-8xl gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-8">
+      <div className="mx-auto grid w-full max-w-8xl gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-8">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-black/70">Email adresa:</p>
-          <a href="mailto:antesevicweddings@gmail.com" className="mt-2 inline-block font-serif text-[clamp(1.8rem,4.2vw,3.2rem)] leading-[1.02] text-black/85">
+          <a href="mailto:antesevicweddings@gmail.com" className="mt-2 inline-block break-all font-serif text-[clamp(1.2rem,5vw,3rem)] leading-[1.06] text-black/85 sm:break-normal">
             antesevicweddings@gmail.com
           </a>
           <p className="mt-4 max-w-md text-sm uppercase tracking-[0.05em] text-black/70">
@@ -24,7 +24,7 @@ export function Footer() {
           <p className="mt-10 font-serif text-xl italic text-black/70">Srbija, Evropa i svet</p>
         </div>
 
-        <div className="ml-auto w-fit justify-self-end">
+        <div className="w-full md:ml-auto md:w-fit md:justify-self-end">
           <div className="grid justify-items-end gap-4 text-right text-xs uppercase tracking-[0.14em] text-black/80">
             <Link href="/">Pocetna</Link>
             <Link href="/portfolio">Portfolio</Link>

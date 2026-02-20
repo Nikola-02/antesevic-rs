@@ -38,6 +38,46 @@ html {
   @apply opacity-0 translate-y-4;
 }
 
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 12px;
+  will-change: transform;
+}
+
+.marquee-left {
+  animation: marquee-left 26s linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right 26s linear infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .row-pause:hover .marquee-left,
+  .row-pause:hover .marquee-right {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

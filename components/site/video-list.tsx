@@ -19,10 +19,10 @@ export function VideoList({ videos }: { videos: Video[] }) {
             className="grid w-full gap-6 border-b border-border pb-8 text-left md:grid-cols-[1fr_360px]"
           >
             <div className="order-2 md:order-1">
-              <h2 className="font-serif text-3xl">{item.title}</h2>
+              <h2 className="font-serif text-2xl sm:text-3xl">{item.title}</h2>
               <p className="mt-3 max-w-2xl text-muted">{item.description}</p>
             </div>
-            <div className="relative order-1 h-56 w-full overflow-hidden md:order-2">
+            <div className="relative order-1 h-52 w-full overflow-hidden sm:h-56 md:order-2">
               <Image src={item.thumbnail_url} alt={item.title} fill className="object-cover" />
             </div>
           </button>
