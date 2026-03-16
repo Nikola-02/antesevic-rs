@@ -1,10 +1,21 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { isAllowedAdminEmail } from "@/lib/admin-auth";
+import { SITE_UNDER_CONSTRUCTION } from "@/lib/site-status";
 
 const PROTECTED_PREFIXES = ["/dashboard", "/api/admin"];
 
 export async function middleware(request: NextRequest) {
+  if (SITE_UNDER_CONSTRUCTION) {
+    const path = request.nextUrl.pathname;
+    if (path !== "/") {
+      if (path.startsWith("/api")) {
+        return NextResponse.json({ error: "Sajt je trenutno u izradi." }, { status: 503 });
+      }
+      return NextResponse.redirect(new URL("/", request.url));
+    }
+  }
+
   const response = NextResponse.next();
 
   if (!request.cookies.get("csrf-token")) {
@@ -62,5 +73,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/api/admin/:path*"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };
