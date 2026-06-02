@@ -4,14 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-
-const links = [
-  { href: "/", label: "Pocetna" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/video", label: "Video galerija" },
-  { href: "/reviews", label: "Recenzije" },
-  { href: "/about", label: "O meni" },
-];
+import { visibleNavLinks as links } from "@/lib/nav-links";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

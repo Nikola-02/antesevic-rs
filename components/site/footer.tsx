@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import { FadeIn } from "@/components/site/fade-in";
+import { visibleNavLinks } from "@/lib/nav-links";
 
 function WhatsappIcon({ size = 16 }: { size?: number }) {
   return (
@@ -27,11 +28,11 @@ export function Footer() {
 
         <FadeIn direction="right" delay={0.08} distance={34} blur={10} className="w-full md:ml-auto md:w-fit md:justify-self-end">
           <div className="grid justify-items-end gap-4 text-right text-xs uppercase tracking-[0.14em] text-black/80">
-            <Link href="/">Pocetna</Link>
-            <Link href="/portfolio">Portfolio</Link>
-            <Link href="/video">Video galerija</Link>
-            <Link href="/reviews">Recenzije</Link>
-            <Link href="/about">O meni</Link>
+            {visibleNavLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </FadeIn>
       </div>

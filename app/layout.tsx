@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { createRootMetadata } from "@/lib/seo";
 import { SITE_UNDER_CONSTRUCTION } from "@/lib/site-status";
 import "./globals.css";
 
@@ -15,10 +16,7 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Antesevic",
-  description: "Elegantna fotografija i video galerija",
-};
+export const metadata: Metadata = createRootMetadata();
 
 export default function RootLayout({
   children,

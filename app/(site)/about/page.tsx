@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { ContactForm } from "@/components/site/contact-form";
-import { Button } from "@/components/ui/button";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "O meni",
+  description:
+    "Upoznaj Antesevic Weddings — premium wedding i editorial fotograf sa fokusom na atmosferu, stil i bezvremenske kadrove.",
+  path: "/about",
+  keywords: ["o meni", "wedding fotograf", "Antesevic biografija"],
+});
 
 export default function AboutPage() {
   return (
@@ -11,7 +19,7 @@ export default function AboutPage() {
           <div className="relative min-h-[420px] overflow-hidden sm:min-h-[520px] md:min-h-[640px]">
             <Image
               src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1500&q=80"
-              alt="Portret fotografa"
+              alt="Portret wedding fotografa Antesevic"
               fill
               priority
               className="object-cover grayscale"
@@ -27,14 +35,6 @@ export default function AboutPage() {
               Kroz miran proces rada i jasnu komunikaciju, gradimo fotografije koje ostaju
               bezvremenske.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/portfolio">
-                <Button variant="ghost">Pogledaj portfolio</Button>
-              </Link>
-              <Link href="/reviews">
-                <Button>Iskustva klijenata</Button>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -44,7 +44,7 @@ export default function AboutPage() {
           <div className="relative h-[280px] overflow-hidden sm:h-[360px] md:h-[420px]">
             <Image
               src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1100&q=80"
-              alt="Behind the scenes 1"
+              alt="Wedding fotografija — iza kamere"
               fill
               className="object-cover"
             />
@@ -52,7 +52,7 @@ export default function AboutPage() {
           <div className="relative h-[320px] overflow-hidden sm:h-[440px] md:h-[520px]">
             <Image
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80"
-              alt="Behind the scenes 2"
+              alt="Editorial wedding portret"
               fill
               className="object-cover grayscale"
             />
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="relative h-[280px] overflow-hidden sm:h-[360px] md:h-[420px]">
             <Image
               src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=1100&q=80"
-              alt="Behind the scenes 3"
+              alt="Detalj sa venchanja"
               fill
               className="object-cover"
             />
@@ -87,7 +87,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1800&q=80"
-            alt="Kontakt pozadina"
+            alt="Kontakt — wedding fotografija pozadina"
             fill
             className="object-cover"
           />

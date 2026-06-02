@@ -2,20 +2,17 @@
 
 import Image from "next/image";
 import { FadeIn } from "@/components/site/fade-in";
+import { homeImages } from "@/lib/home-images";
+import { cn } from "@/lib/utils";
 
-const rowOne = [
-  "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1000&q=80",
-];
+const rowOne = homeImages.gallery.slice(0, 6);
+const rowTwo = homeImages.gallery.slice(6);
 
-const rowTwo = [
-  "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1523263685509-57c1d050d19b?auto=format&fit=crop&w=1000&q=80",
-];
+const galleryObjectPosition: Record<string, string> = {
+  "/images/home/wedding-soft-light-portrait.webp": "object-top",
+  "/images/home/wedding-joyful-celebration.webp": "object-[center_18%]",
+  "/images/home/wedding-outdoor-wide-shot.webp": "object-[center_22%]",
+};
 
 function Row({ images, reverse = false }: { images: string[]; reverse?: boolean }) {
   return (
@@ -28,9 +25,12 @@ function Row({ images, reverse = false }: { images: string[]; reverse?: boolean 
           >
             <Image
               src={src}
-              alt={`Kvalitet kadar ${index + 1}`}
+              alt={`Kvalitet kadar ${(index % images.length) + 1}`}
               fill
-              className="object-cover transition-transform duration-500 group-hover/item:scale-110"
+              className={cn(
+                "object-cover transition-transform duration-500 group-hover/item:scale-110",
+                galleryObjectPosition[src] ?? "object-center",
+              )}
             />
           </div>
         ))}
