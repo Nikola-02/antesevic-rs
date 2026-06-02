@@ -55,7 +55,7 @@ export function QualityMovingRows() {
   const { t } = useLocale();
 
   return (
-    <section className="bg-[#1e1e1f] py-14 text-white md:py-20">
+    <section className="overflow-x-clip bg-[#1e1e1f] py-14 text-white md:py-20">
       <div className="mx-auto mb-10 w-full max-w-3xl px-4 sm:px-6 md:px-10">
         <FadeIn direction="up" distance={34} blur={10} duration={0.85}>
           <p className="text-sm leading-relaxed text-white/80 sm:text-base md:text-lg">

@@ -22,7 +22,7 @@ export function HomePageContent() {
   const { t } = useLocale();
 
   return (
-    <div className="bg-[#efefed]">
+    <div className="overflow-x-clip bg-[#efefed]">
       <section className="relative w-full overflow-hidden">
         <div className="relative w-full md:aspect-[3/2] md:min-h-[400px] md:max-h-[calc(100svh-78px)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -44,7 +44,7 @@ export function HomePageContent() {
             sizes="100vw"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#efefed]/85 via-[#efefed]/35 to-transparent to-50%" />
-          <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-8xl items-start justify-start px-4 pt-[72px] sm:px-6 sm:pt-[80px] md:px-10 md:pt-[88px] lg:pt-[96px]">
+          <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-8xl items-start justify-start px-4 pt-[23px] sm:px-6 md:px-10 md:pt-[88px] lg:pt-[96px]">
             <div className="max-w-[18rem] sm:max-w-xs md:max-w-md lg:max-w-lg">
               <FadeIn direction="left" distance={40} blur={16} duration={0.9}>
                 <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-black/60 sm:text-xs">
@@ -174,7 +174,7 @@ export function HomePageContent() {
         <FadeIn className="mx-auto w-full max-w-8xl" direction="up" distance={32} blur={10}>
           <div className="grid gap-3 sm:grid-cols-2">
             {homeImages.showcase.slice(0, 4).map((src, i) => (
-              <div key={src} className="w-full max-md:overflow-visible md:relative md:h-72 md:overflow-hidden">
+              <div key={src} className="w-full overflow-hidden md:relative md:h-72">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={src}

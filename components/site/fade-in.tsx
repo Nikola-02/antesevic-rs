@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 type FadeInProps = {
   children: React.ReactNode;
@@ -23,21 +25,34 @@ export function FadeIn({
   scaleFrom = 0.97,
   duration = 0.78,
 }: FadeInProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(max-width: 767px)");
+    const update = () => setIsMobile(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  const resolvedDirection = isMobile && (direction === "left" || direction === "right") ? "up" : direction;
+  const resolvedDistance = isMobile && (direction === "left" || direction === "right") ? Math.min(distance, 24) : distance;
+
   const initial =
-    direction === "left"
-      ? { opacity: 0, x: -distance, filter: `blur(${blur}px)`, scale: scaleFrom }
-      : direction === "right"
-        ? { opacity: 0, x: distance, filter: `blur(${blur}px)`, scale: scaleFrom }
-        : { opacity: 0, y: distance, filter: `blur(${blur}px)`, scale: scaleFrom };
+    resolvedDirection === "left"
+      ? { opacity: 0, x: -resolvedDistance, filter: `blur(${blur}px)`, scale: scaleFrom }
+      : resolvedDirection === "right"
+        ? { opacity: 0, x: resolvedDistance, filter: `blur(${blur}px)`, scale: scaleFrom }
+        : { opacity: 0, y: resolvedDistance, filter: `blur(${blur}px)`, scale: scaleFrom };
 
   const animate =
-    direction === "left" || direction === "right"
+    resolvedDirection === "left" || resolvedDirection === "right"
       ? { opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }
       : { opacity: 1, y: 0, filter: "blur(0px)", scale: 1 };
 
   return (
     <motion.div
-      className={className}
+      className={cn("max-w-full", className)}
       initial={initial}
       whileInView={animate}
       viewport={{ once: true, margin: "-80px" }}

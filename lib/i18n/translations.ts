@@ -26,7 +26,7 @@ const en = {
     heroTitleLine1: "Photography & film.",
     heroTitleLine2: "",
     heroSubtitle:
-      "I work quietly in the background and capture what is real — the glances, the laughter, the moments you didn't plan, but will never forget.",
+      "I capture real glances, laughter, and unplanned moments you will never forget.",
     tripleLeftAlt: "Couple portrait — left frame",
     tripleCenterAlt: "Main editorial couple shot",
     tripleRightAlt: "Couple portrait — right frame",
@@ -115,7 +115,7 @@ const sr = {
     heroTitleLine1: "Fotografija i film.",
     heroTitleLine2: "",
     heroSubtitle:
-      "Radim tiho u pozadini i hvatam ono sto je stvarno — poglede, smeh, trenutke koje niste planirali, a nikada ne cete zaboraviti.",
+      "Hvatam prave poglede, smeh i neplanirane trenutke koje nikada ne cete zaboraviti.",
     tripleLeftAlt: "Portret para — levi kadar",
     tripleCenterAlt: "Glavni editorial kadar para",
     tripleRightAlt: "Portret para — desni kadar",

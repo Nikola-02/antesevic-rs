@@ -8,10 +8,10 @@ import { JsonLd } from "@/components/site/json-ld";
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
     <LocaleProvider>
-      <div className="min-h-screen bg-white text-foreground">
+      <div className="min-h-screen overflow-x-clip bg-white text-foreground">
         <JsonLd />
         <Navbar />
-        <main>{children}</main>
+        <main className="overflow-x-clip">{children}</main>
         <Footer />
       </div>
     </LocaleProvider>

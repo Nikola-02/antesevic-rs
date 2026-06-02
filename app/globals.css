@@ -11,19 +11,22 @@
   --inverse: #0f0f0f;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 * {
   border-color: var(--border);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 .section-spacing {
@@ -43,6 +46,12 @@ html {
   width: max-content;
   gap: 12px;
   will-change: transform;
+}
+
+.row-pause {
+  overflow: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 .marquee-left {
