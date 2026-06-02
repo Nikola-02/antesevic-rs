@@ -25,14 +25,11 @@ export function Footer() {
           <a href="mailto:antesevicweddings@gmail.com" className="mt-2 inline-block break-all font-serif text-[clamp(1.2rem,5vw,3rem)] leading-[1.06] text-black/85 sm:break-normal">
             antesevicweddings@gmail.com
           </a>
-          <p className="mt-4 max-w-md text-sm uppercase tracking-[0.05em] text-black/70">
-            {t.footer.responseTime}
-          </p>
           <p className="mt-10 font-serif text-xl italic text-black/70">{t.footer.location}</p>
         </FadeIn>
 
         <FadeIn direction="right" delay={0.08} distance={34} blur={10} className="w-full md:ml-auto md:w-fit md:justify-self-end">
-          <div className="grid justify-items-end gap-4 text-right text-xs uppercase tracking-[0.14em] text-black/80">
+          <div className="grid gap-4 text-xs uppercase tracking-[0.14em] text-black/80 md:justify-items-end md:text-right">
             {visibleNavLinks.map((link) => (
               <Link key={link.href} href={link.href}>
                 {link.key === "home" ? t.nav.home : t.nav.about}
@@ -42,9 +39,9 @@ export function Footer() {
         </FadeIn>
       </div>
 
-      <FadeIn direction="up" delay={0.14} distance={24} blur={8} className="mx-auto mt-10 flex w-full max-w-8xl items-center justify-between border-t border-black/10 pt-6">
+      <div className="mx-auto mt-10 flex w-full max-w-8xl flex-col gap-4 border-t border-black/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm uppercase tracking-[0.35em] text-black/80">Antesevic</p>
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href="https://www.instagram.com/antesevic_raw/"
             target="_blank"
@@ -73,7 +70,7 @@ export function Footer() {
             <Facebook size={16} />
           </a>
         </div>
-      </FadeIn>
+      </div>
     </footer>
   );
 }
