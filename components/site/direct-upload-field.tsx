@@ -45,7 +45,7 @@ export function DirectUploadField({
       });
 
       if (!preResponse.ok) {
-        throw new Error("Nije moguce pripremiti upload.");
+        throw new Error("Nije moguće pripremiti upload.");
       }
 
       const payload = (await preResponse.json()) as { signedUrl: string; publicUrl: string };

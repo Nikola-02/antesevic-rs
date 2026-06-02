@@ -5,11 +5,11 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = createPageMetadata({
   title: "O meni",
   description:
-    "Filip Antesevic — wedding fotograf i videograf iz Srbije. Dokumentarni pristup sa editorial estetikom, za parove koji cene prirodnost, emociju i jednostavnost.",
+    "Filip Antešević — wedding fotograf i videograf iz Srbije. Dokumentarni pristup sa editorial estetikom, za parove koji cene prirodnost, emociju i jednostavnost.",
   path: "/about",
   keywords: [
     "o meni",
-    "Filip Antesevic",
+    "Filip Antešević",
     "wedding fotograf Srbija",
     "wedding videograf Srbija",
     "wedding fotograf Evropa",

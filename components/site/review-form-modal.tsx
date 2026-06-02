@@ -65,7 +65,7 @@ export function ReviewFormModal() {
       form.setValue("avatarUrl", payload.publicUrl, { shouldValidate: true });
       setPreview(payload.publicUrl);
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : "Doslo je do greske pri upload-u.");
+      setStatus(error instanceof Error ? error.message : "Došlo je do greške pri upload-u.");
     } finally {
       setUploading(false);
     }
@@ -84,11 +84,11 @@ export function ReviewFormModal() {
     });
 
     if (!response.ok) {
-      setStatus("Recenzija nije poslata. Pokusaj ponovo.");
+      setStatus("Recenzija nije poslata. Pokušaj ponovo.");
       return;
     }
 
-    setStatus("Recenzija je poslata i ceka odobrenje.");
+    setStatus("Recenzija je poslata i čeka odobrenje.");
     setPreview("");
     form.reset();
   });
@@ -103,7 +103,7 @@ export function ReviewFormModal() {
           <div className="bg-black p-8 text-white">
             <h3 className="font-serif text-4xl leading-tight">Podeli utisak</h3>
             <p className="mt-4 text-sm text-white/80">
-              Hvala ti na poverenju. Tvoja recenzija pomaze drugim klijentima.
+              Hvala ti na poverenju. Tvoja recenzija pomaže drugim klijentima.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4">
               <div className="relative h-28 w-28 overflow-hidden rounded-full border border-white/40 bg-white/10">
@@ -142,7 +142,7 @@ export function ReviewFormModal() {
               {...form.register("honeypot")}
             />
             <Button type="submit" className="w-fit" disabled={uploading}>
-              Posalji recenziju
+              Pošalji recenziju
             </Button>
             {status ? <p className="text-sm text-muted">{status}</p> : null}
           </form>

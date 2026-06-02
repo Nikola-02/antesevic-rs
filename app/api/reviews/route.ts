@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   const ip = getRequestIp(request);
   const limit = await checkRateLimit(`reviews:${ip}`, 3, 60_000);
   if (!limit.success) {
-    return NextResponse.json({ error: "Previse zahteva" }, { status: 429 });
+    return NextResponse.json({ error: "Previše zahteva" }, { status: 429 });
   }
 
   const body = await request.json();

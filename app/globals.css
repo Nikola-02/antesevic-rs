@@ -13,7 +13,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -21,8 +20,14 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
   max-width: 100%;
+}
+
+@media (max-width: 1023px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 * {

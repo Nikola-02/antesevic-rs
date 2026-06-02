@@ -50,7 +50,7 @@ export function ReviewCard({ review }: { review: Review }) {
           type="button"
           onClick={() => setExpanded((value) => !value)}
         >
-          {expanded ? "Sakrij" : "Procitaj vise"}
+          {expanded ? "Sakrij" : "Pročitaj više"}
         </button>
       ) : null}
     </article>

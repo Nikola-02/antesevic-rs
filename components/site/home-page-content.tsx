@@ -22,7 +22,8 @@ export function HomePageContent() {
   const { t } = useLocale();
 
   return (
-    <div className="overflow-x-clip bg-[#efefed]">
+    <>
+      <div className="max-lg:overflow-x-clip bg-[#efefed]">
       <section className="relative w-full overflow-hidden">
         <div className="relative w-full md:aspect-[3/2] md:min-h-[400px] md:max-h-[calc(100svh-78px)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -185,9 +186,11 @@ export function HomePageContent() {
           </div>
         </div>
       </section>
+      </div>
 
       <PortfolioScrollShowcase />
 
+      <div className="max-lg:overflow-x-clip bg-[#efefed]">
       <section className="block px-4 pb-14 lg:hidden">
         <FadeIn className="mx-auto w-full max-w-8xl" direction="up" distance={32} blur={10}>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -245,6 +248,7 @@ export function HomePageContent() {
           </div>
         </FadeIn>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

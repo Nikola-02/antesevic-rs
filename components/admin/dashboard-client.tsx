@@ -179,7 +179,7 @@ export function DashboardClient({
           </div>
         ))}
         {pendingReviews.length === 0 ? (
-          <p className="text-muted">Nema recenzija na cekanju.</p>
+          <p className="text-muted">Nema recenzija na čekanju.</p>
         ) : null}
       </section>
     </div>

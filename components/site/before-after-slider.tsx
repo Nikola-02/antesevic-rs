@@ -69,7 +69,7 @@ export function BeforeAfterSlider({
         value={position}
         onChange={(event) => setPosition(Number(event.target.value))}
         className="absolute inset-x-3 bottom-3 z-30 h-11"
-        aria-label="Poredjenje fotografija pre i posle obrade"
+        aria-label="Poređenje fotografija pre i posle obrade"
       />
     </div>
   );

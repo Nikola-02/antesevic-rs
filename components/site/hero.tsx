@@ -29,7 +29,7 @@ export function HeroSection() {
             Elegantni kadrovi. Bezvremenski tonovi.
           </h1>
           <p className="mt-4 max-w-lg text-sm md:text-base">
-            Minimalna vizuelna prica u crno-beloj estetici i prirodnom kontrastu.
+            Minimalna vizuelna priča u crno-beloj estetici i prirodnom kontrastu.
           </p>
           <Link href="/portfolio" className="mt-8 inline-block">
             <Button variant="inverse">Pogledaj portfolio</Button>

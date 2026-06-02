@@ -13,7 +13,7 @@ export default async function ReviewsPage() {
             <p className="mb-3 text-xs uppercase tracking-[0.22em] text-muted">Iskustva klijenata</p>
             <h1 className="font-serif text-5xl">Recenzije</h1>
             <p className="mt-3 max-w-2xl text-muted">
-              Utisci ljudi sa kojima smo radili. Svaka recenzija je autenticna i odobrena pre objave.
+              Utisci ljudi sa kojima smo radili. Svaka recenzija je autentična i odobrena pre objave.
             </p>
           </div>
           <ReviewFormModal />
@@ -23,7 +23,7 @@ export default async function ReviewsPage() {
             <ReviewCard key={review.id} review={review} />
           ))}
           {reviews.length === 0 ? (
-            <p className="text-muted">Jos nema odobrenih recenzija. Ostavi svoju.</p>
+            <p className="text-muted">Još nema odobrenih recenzija. Ostavi svoju.</p>
           ) : null}
         </div>
       </div>
