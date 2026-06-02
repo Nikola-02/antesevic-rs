@@ -20,7 +20,7 @@ export function createPageMetadata({
   const imageUrl = new URL(ogImage, siteConfig.url).toString();
 
   return {
-    title,
+    title: path === "/" ? { absolute: title } : title,
     description,
     keywords: [...siteConfig.keywords, ...keywords],
     alternates: { canonical: url },
@@ -111,6 +111,6 @@ export function createOrganizationJsonLd() {
     telephone: siteConfig.phone,
     areaServed: ["RS", "Europe", "Worldwide"],
     sameAs: [siteConfig.instagram, siteConfig.whatsapp],
-    serviceType: ["Wedding photography", "Editorial photography"],
+    serviceType: ["Wedding photography", "Wedding videography", "Editorial photography"],
   };
 }

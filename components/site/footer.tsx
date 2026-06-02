@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { Facebook, Instagram } from "lucide-react";
 import { FadeIn } from "@/components/site/fade-in";
+import { useLocale } from "@/lib/i18n/locale-context";
 import { visibleNavLinks } from "@/lib/nav-links";
 
 function WhatsappIcon({ size = 16 }: { size?: number }) {
@@ -12,25 +15,27 @@ function WhatsappIcon({ size = 16 }: { size?: number }) {
 }
 
 export function Footer() {
+  const { t } = useLocale();
+
   return (
     <footer className="bg-[#e8e8e6] px-4 py-10 sm:px-6 sm:py-12 md:px-10 md:py-14">
       <div className="mx-auto grid w-full max-w-8xl gap-8 md:grid-cols-[1.1fr_0.9fr] md:gap-8">
         <FadeIn direction="left" distance={34} blur={10}>
-          <p className="text-xs uppercase tracking-[0.18em] text-black/70">Email adresa:</p>
+          <p className="text-xs uppercase tracking-[0.18em] text-black/70">{t.footer.emailLabel}</p>
           <a href="mailto:antesevicweddings@gmail.com" className="mt-2 inline-block break-all font-serif text-[clamp(1.2rem,5vw,3rem)] leading-[1.06] text-black/85 sm:break-normal">
             antesevicweddings@gmail.com
           </a>
           <p className="mt-4 max-w-md text-sm uppercase tracking-[0.05em] text-black/70">
-            Odgovor na upit najcesce stize za manje od 3 sata.
+            {t.footer.responseTime}
           </p>
-          <p className="mt-10 font-serif text-xl italic text-black/70">Srbija, Evropa i svet</p>
+          <p className="mt-10 font-serif text-xl italic text-black/70">{t.footer.location}</p>
         </FadeIn>
 
         <FadeIn direction="right" delay={0.08} distance={34} blur={10} className="w-full md:ml-auto md:w-fit md:justify-self-end">
           <div className="grid justify-items-end gap-4 text-right text-xs uppercase tracking-[0.14em] text-black/80">
             {visibleNavLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                {link.label}
+                {link.key === "home" ? t.nav.home : t.nav.about}
               </Link>
             ))}
           </div>

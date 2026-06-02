@@ -9,6 +9,7 @@ const envSchema = z.object({
   R2_BUCKET: z.string().optional(),
   R2_ENDPOINT: z.string().url().optional(),
   RESEND_API_KEY: z.string().optional(),
+  RESEND_FROM_EMAIL: z.string().optional(),
   CONTACT_RECEIVER_EMAIL: z.string().email().optional(),
   UPSTASH_REDIS_REST_URL: z.string().url().optional(),
   UPSTASH_REDIS_REST_TOKEN: z.string().optional(),

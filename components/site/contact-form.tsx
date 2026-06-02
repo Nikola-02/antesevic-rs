@@ -8,11 +8,13 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useLocale } from "@/lib/i18n/locale-context";
 
 type ContactValues = z.infer<typeof contactSchema>;
 
 export function ContactForm() {
   const [status, setStatus] = useState<string>("");
+  const { t } = useLocale();
   const form = useForm<ContactValues>({
     resolver: zodResolver(contactSchema),
     defaultValues: { name: "", email: "", message: "" },
@@ -27,25 +29,25 @@ export function ContactForm() {
     });
 
     if (!response.ok) {
-      setStatus("Poruka nije poslata. Pokusaj ponovo.");
+      setStatus(t.contactForm.error);
       return;
     }
 
     form.reset();
-    setStatus("Poruka je uspesno poslata.");
+    setStatus(t.contactForm.success);
   });
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4">
-      <Input placeholder="Ime i prezime" {...form.register("name")} />
-      <Input placeholder="Email adresa" type="email" {...form.register("email")} />
+      <Input placeholder={t.contactForm.name} {...form.register("name")} />
+      <Input placeholder={t.contactForm.email} type="email" {...form.register("email")} />
       <Textarea
-        placeholder="Poruka"
+        placeholder={t.contactForm.message}
         rows={5}
         {...form.register("message")}
       />
       <Button type="submit" className="w-full sm:w-fit">
-        Posalji poruku
+        {t.contactForm.submit}
       </Button>
       {status ? <p className="text-sm text-muted">{status}</p> : null}
     </form>

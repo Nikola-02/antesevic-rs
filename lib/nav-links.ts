@@ -1,15 +1,17 @@
+export type NavLinkKey = "home" | "about" | "portfolio" | "video" | "reviews";
+
 export type NavLink = {
   href: string;
-  label: string;
+  key: NavLinkKey;
   hidden?: boolean;
 };
 
 export const navLinks: NavLink[] = [
-  { href: "/", label: "Pocetna" },
-  { href: "/portfolio", label: "Portfolio", hidden: true },
-  { href: "/video", label: "Video galerija", hidden: true },
-  { href: "/reviews", label: "Recenzije", hidden: true },
-  { href: "/about", label: "O meni" },
+  { href: "/", key: "home" },
+  { href: "/portfolio", key: "portfolio", hidden: true },
+  { href: "/video", key: "video", hidden: true },
+  { href: "/reviews", key: "reviews", hidden: true },
+  { href: "/about", key: "about" },
 ];
 
 export const visibleNavLinks = navLinks.filter((link) => !link.hidden);
