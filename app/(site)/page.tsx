@@ -48,7 +48,7 @@ export default function HomePage() {
             sizes="100vw"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#efefed]/85 via-[#efefed]/35 to-transparent to-50%" />
-          <div className="relative z-10 mx-auto flex h-full w-full max-w-8xl items-start justify-start px-4 pt-8 sm:px-6 sm:pt-10 md:px-10 md:pt-12 lg:pt-14">
+          <div className="relative z-10 mx-auto flex h-full w-full max-w-8xl items-start justify-start px-4 pt-[72px] sm:px-6 sm:pt-[80px] md:px-10 md:pt-[88px] lg:pt-[96px]">
             <div className="max-w-[18rem] sm:max-w-xs md:max-w-md lg:max-w-lg">
               <FadeIn direction="left" distance={40} blur={16} duration={0.9}>
                 <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-black/60 sm:text-xs">Latest collection</p>
