@@ -23,10 +23,9 @@ const en = {
   home: {
     heroAlt: "Couple on a yacht — Antesevic wedding",
     heroEyebrow: "Filip Antešević",
-    heroTitleLine1: "Photography & film.",
+    heroTitleLine1: "EDITORIAL WEDDING WORLD",
     heroTitleLine2: "",
-    heroSubtitle:
-      "I capture real glances, laughter, and unplanned moments you will never forget.",
+    heroSubtitle: "Timeless. Refined. Effortless.",
     tripleLeftAlt: "Couple portrait — left frame",
     tripleCenterAlt: "Main editorial couple shot",
     tripleRightAlt: "Couple portrait — right frame",
@@ -112,10 +111,9 @@ const sr = {
   home: {
     heroAlt: "Par na jahti — venchanje Antesevic",
     heroEyebrow: "Filip Antešević",
-    heroTitleLine1: "Fotografija i film.",
+    heroTitleLine1: "EDITORIAL WEDDING WORLD",
     heroTitleLine2: "",
-    heroSubtitle:
-      "Hvatam prave poglede, smeh i neplanirane trenutke koje nikada ne cete zaboraviti.",
+    heroSubtitle: "Bezvremensko. Rafinisano. Bez napora.",
     tripleLeftAlt: "Portret para — levi kadar",
     tripleCenterAlt: "Glavni editorial kadar para",
     tripleRightAlt: "Portret para — desni kadar",

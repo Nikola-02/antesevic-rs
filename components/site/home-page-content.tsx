@@ -45,28 +45,46 @@ export function HomePageContent() {
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#efefed]/85 via-[#efefed]/35 to-transparent to-50%" />
           <div className="absolute inset-0 z-10 mx-auto flex w-full max-w-8xl items-start justify-start px-4 pt-[23px] sm:px-6 md:px-10 md:pt-[88px] lg:pt-[96px]">
-            <div className="max-w-[18rem] sm:max-w-xs md:max-w-md lg:max-w-lg">
-              <FadeIn direction="left" distance={40} blur={16} duration={0.9}>
-                <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-black/60 sm:text-xs">
-                  {t.home.heroEyebrow}
-                </p>
-              </FadeIn>
-              <FadeIn direction="right" delay={0.08} distance={52} blur={16} duration={0.95}>
-                <h1 className="font-serif text-[clamp(1.9rem,5.5vw,4rem)] leading-[0.96] text-black">
-                  {t.home.heroTitleLine1}
-                  {t.home.heroTitleLine2 ? (
-                    <>
-                      <br />
-                      {t.home.heroTitleLine2}
-                    </>
-                  ) : null}
-                </h1>
-              </FadeIn>
-              <FadeIn direction="left" delay={0.18} distance={42} blur={12} duration={0.85}>
-                <p className="mt-4 max-w-sm text-sm leading-relaxed text-black/70 sm:max-w-md md:text-base">
-                  {t.home.heroSubtitle}
-                </p>
-              </FadeIn>
+            <div className="w-full max-w-[18rem] sm:max-w-xs md:max-w-md lg:max-w-lg">
+              <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-black/60 sm:text-xs md:hidden">
+                {t.home.heroEyebrow}
+              </p>
+              <h1 className="font-serif text-[clamp(1.9rem,5.5vw,4rem)] leading-[0.96] text-black md:hidden">
+                {t.home.heroTitleLine1}
+                {t.home.heroTitleLine2 ? (
+                  <>
+                    <br />
+                    {t.home.heroTitleLine2}
+                  </>
+                ) : null}
+              </h1>
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-black/70 sm:max-w-md md:hidden md:text-base">
+                {t.home.heroSubtitle}
+              </p>
+
+              <div className="hidden md:block">
+                <FadeIn direction="left" distance={40} blur={16} duration={0.9}>
+                  <p className="mb-3 text-[10px] uppercase tracking-[0.28em] text-black/60 sm:text-xs">
+                    {t.home.heroEyebrow}
+                  </p>
+                </FadeIn>
+                <FadeIn direction="right" delay={0.08} distance={52} blur={16} duration={0.95}>
+                  <h1 className="font-serif text-[clamp(1.9rem,5.5vw,4rem)] leading-[0.96] text-black">
+                    {t.home.heroTitleLine1}
+                    {t.home.heroTitleLine2 ? (
+                      <>
+                        <br />
+                        {t.home.heroTitleLine2}
+                      </>
+                    ) : null}
+                  </h1>
+                </FadeIn>
+                <FadeIn direction="left" delay={0.18} distance={42} blur={12} duration={0.85}>
+                  <p className="mt-4 max-w-sm text-sm leading-relaxed text-black/70 sm:max-w-md md:text-base">
+                    {t.home.heroSubtitle}
+                  </p>
+                </FadeIn>
+              </div>
             </div>
           </div>
         </div>

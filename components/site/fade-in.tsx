@@ -25,7 +25,7 @@ export function FadeIn({
   scaleFrom = 0.97,
   duration = 0.78,
 }: FadeInProps) {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 767px)");
@@ -35,8 +35,9 @@ export function FadeIn({
     return () => media.removeEventListener("change", update);
   }, []);
 
-  const resolvedDirection = isMobile && (direction === "left" || direction === "right") ? "up" : direction;
-  const resolvedDistance = isMobile && (direction === "left" || direction === "right") ? Math.min(distance, 24) : distance;
+  const avoidHorizontal = isMobile && (direction === "left" || direction === "right");
+  const resolvedDirection = avoidHorizontal ? "up" : direction;
+  const resolvedDistance = avoidHorizontal ? Math.min(distance, 20) : distance;
 
   const initial =
     resolvedDirection === "left"
